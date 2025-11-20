@@ -1,6 +1,6 @@
 .info {
-    background-color: #084734;
-    color: #cef17b;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
     padding: 60px 100px;
     display: flex;
     justify-content: center;
@@ -19,6 +19,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-bottom: 30px;
+    color: var(--text-primary);
 }
 
 .prehistory {
@@ -26,6 +27,7 @@
     word-spacing: 5px;
     letter-spacing: 1px;
     text-align: center;
+    color: var(--text-secondary);
 }
 
 @media (max-width: 1024px) {

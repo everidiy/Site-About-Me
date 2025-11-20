@@ -1,13 +1,15 @@
 .connection {
     padding: 80px 100px;
-    background-color: #cdedb3;
-    color: #084734;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     text-align: center;
     min-height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .title-contact {
@@ -29,8 +31,8 @@
 }
 
 .contact-arrow {
-    background: #084734;
-    color: #cef17b;
+    background: var(--accent-color);
+    color: var(--bg-primary);
     border: none;
     border-radius: 50%;
     width: 60px;
@@ -53,15 +55,15 @@
     height: 380px;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(8, 71, 52, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
-    background: white;
+    background: var(--card-bg);
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .contact-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(8, 71, 52, 0.3);
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .contact-card-header {
@@ -98,7 +100,7 @@
 
 .contact-card-body p {
     font-size: 18px;
-    color: #666;
+    color: var(--text-primary);
     margin: 0;
     flex-grow: 1;
     display: flex;
@@ -131,7 +133,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #084734;
+    background: var(--accent-color);
     opacity: 0.3;
     cursor: pointer;
     transition: all 0.3s ease;

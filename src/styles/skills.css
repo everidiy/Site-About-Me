@@ -12,10 +12,10 @@
 .skills {
     padding: 60px 100px;
     height: 50vh;
-    background-color: #cef17b;
-    color: #084734;
-    overflow: hidden;
-    position: relative;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .slider-container {
@@ -41,16 +41,16 @@
 .card {
     width: 300px;
     height: 350px;
-    border: 3px solid #084734;
+    border: 2px solid var(--accent-color);
     border-radius: 15px;
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #084734;
-    color: #cef17b;
-    box-shadow: 0px 0px 30px rgba(8, 71, 52, 0.2);
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    box-shadow: 0px 0px 20px var(--shadow-color);
     transition: transform 0.3s ease;
     flex-shrink: 0;
 }
@@ -67,10 +67,10 @@
     margin: 15px;
     width: 120px;
     height: 120px;
-    background-color: white;
+    background-color: var(--bg-secondary);
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0px 0px 30px rgba(8, 71, 52, 0.2);
+    box-shadow: 0px 0px 20px var(--shadow-color);
     object-fit: contain;
 }
 

@@ -4,8 +4,15 @@ import '../styles/header.css';
 export default function Header() {
     const [isNavVisible, setIsNavVisible] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            setDarkMode(true);
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+
         const checkMobileStyle = () => {
             const mobile = window.innerWidth <= 768;
             setIsMobile(mobile);
@@ -17,6 +24,19 @@ export default function Header() {
 
         return () => window.removeEventListener('resize', checkMobileStyle);
     }, []);
+
+    const toggleTheme = () => {
+        const newDarkMode = !darkMode;
+        setDarkMode(newDarkMode);
+
+        if (newDarkMode) {
+            document.documentElement.setAttribute('data-theme', 'dark')
+            localStorage.setItem('theme', 'dark')
+        } else {
+            document.documentElement.removeAttribute('data-theme', 'dark')
+            localStorage.setItem('theme', 'light')
+        }
+    }
 
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
@@ -57,6 +77,14 @@ export default function Header() {
                         <div className="link" onClick={() => scrollToSection('projects')}>Projects</div>
                         <div className="link" onClick={() => scrollToSection('contact')}>Contact</div>
                         
+                        <button
+                        className='theme-toggle'
+                        onClick={toggleTheme}
+                        aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                        >
+                            {darkMode ? 'light' : "dark"}
+                        </button>
+
                         {}
                         {!isMobile && (
                             <button className='hide' onClick={() => setIsNavVisible(false)}>

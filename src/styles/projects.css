@@ -4,8 +4,8 @@
 }
 
 .projects {
-    background-color: #084734;
-    color: #cef17b;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     height: auto;
     min-height: 60vh;
     display: flex;
@@ -13,6 +13,7 @@
     align-items: center;
     flex-direction: column;
     padding: 60px 20px;
+    border-top: 1px solid var(--border-color);
 }
 
 .container-projects {
@@ -27,16 +28,16 @@
 .card-project {
     width: 300px;
     height: 350px;
-    border: 3px solid #084734;
+    border: 2px solid var(--accent-color);
     border-radius: 15px;
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #cef17b;
-    color: #084734;
-    box-shadow: 0px 0px 30px rgba(8, 71, 52, 0.6);
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    box-shadow: 0px 0px 20px var(--shadow-color);
     transition: all 0.3s;
     flex-shrink: 0;
 }
@@ -51,10 +52,10 @@
 .card-project img {
     margin: 15px;
     width: 120px;
-    background-color: white;
+    background-color: var(--text-primary);
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0px 0px 30px rgba(8, 71, 52, 0.2);
+    box-shadow: 0px 0px 20px var(--shadow-color);
     object-fit: contain;
 }
 
@@ -77,15 +78,15 @@
 
 .project-links a {
     padding: 10px 20px;
-    background-color: #084734;
-    color: #cef17b;
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s;
 }
 
 .project-links a:hover {
-    background-color: #0a5c40;
+    background-color: var(--text-secondary);
     transform: translateY(-2px);
 }
 
