@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/header.css';
 
 export default function Header() {
@@ -29,7 +29,23 @@ function Logo() {
 }
 
 function Links() {
+    useEffect(() => {
+        const checkMobyleStyle = () => {
+            const mobile = window.innerWidth <= 768;
+            setIsMobile(mobile)
+            setIsVisible(!mobile)
+        }
+
+        checkMobyleStyle();
+
+        window.addEventListener("resize", checkMobyleStyle);
+
+        return () => window.removeEventListener('resize', checkMobyleStyle)
+
+    }, [])
+
     const [isVisible, setIsVisible] = useState(true);
+    const [isMobile, setIsMobile] = useState(false);
 
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
