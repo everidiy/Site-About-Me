@@ -325,8 +325,8 @@ body, html {
     }
     
     .show-links {
-        top: 110px;
+        top: 6%;
         padding: 8px 12px;
-        font-size: 12px;
+        font-size: 20px;
     }
 }
