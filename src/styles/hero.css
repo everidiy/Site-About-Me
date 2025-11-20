@@ -293,6 +293,7 @@
     .hero {
         padding: 65px 10px 20px;
         gap: 25px;
+        min-height: 70vh;
     }
     
     .hero-logo img {
