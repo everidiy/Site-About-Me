@@ -220,7 +220,6 @@
     .nav {
         flex-direction: column;
         gap: 15px;
-        padding: 15px 20px;
         min-height: auto;
         transition: min-height 0.4s ease;
     }
@@ -284,7 +283,7 @@
     
     .show-links {
         display: block;
-        top: 90px;
+        top: 6%;
         padding: 10px 15px;
         font-size: 24px;
     }
@@ -293,11 +292,6 @@
 @media (max-width: 480px) {    
     .nav {
         gap: 12px;
-        padding: 12px 15px;
-    }
-    
-    body {
-        padding-top: 120px;
     }
     
     .links {
