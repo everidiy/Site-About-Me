@@ -1,0 +1,322 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #084734;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 5px solid #cef17b;
+    gap: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 90px;
+    transition: all 0.4s ease;
+}
+
+.nav.collapsed {
+    min-height: 80px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 0px 30px rgba(206, 241, 123, 0.2);
+    border: 3px solid #cef17b;
+    transition: all 0.3s ease;
+    object-fit: cover;
+} 
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для меню */
+.links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-weight: bold;
+    color: #cef17b;
+    font-size: 18px;
+    list-style: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 100px;
+    overflow: hidden;
+}
+
+/* Анимация закрытия меню */
+.links.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+/* Анимация появления ссылок */
+.link {
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 8px;
+    animation: slideInFromLeft 0.6s ease-out backwards;
+}
+
+.link:nth-child(1) { animation-delay: 0.1s; }
+.link:nth-child(2) { animation-delay: 0.15s; }
+.link:nth-child(3) { animation-delay: 0.2s; }
+.link:nth-child(4) { animation-delay: 0.25s; }
+.link:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.link:hover {
+    transform: translateY(-2px);
+    background: rgba(206, 241, 123, 0.1);
+}
+
+.link::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #cef17b;
+    transition: width 0.3s ease;
+}
+
+.link:hover::before {
+    width: 80%;
+}
+
+.hide {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #cef17b;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.hide:hover {
+    background: rgba(206, 241, 123, 0.1);
+    transform: scale(1.1);
+}
+
+.show-links {
+    position: fixed;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #084734;
+    border: 2px solid #cef17b;
+    color: #cef17b;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 1001;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    animation: slideInFromTop 0.5s ease-out forwards;
+    white-space: nowrap;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #cef17b;
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.show-links:hover {
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0px 6px 20px rgba(206, 241, 123, 0.4);
+}
+
+.show-links:active {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Адаптивность */
+@media (min-width: 1024px) {
+    .nav {
+        gap: 40px;
+    }
+    
+    .links {
+        gap: 30px;
+        font-size: 16px;
+    }
+    
+    .link {
+        padding: 6px 12px;
+    }
+
+    .hide {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        min-height: auto;
+        transition: min-height 0.4s ease;
+    }
+    
+    .links {
+        flex-direction: column;
+        gap: 15px;
+        font-size: 16px;
+        max-height: 400px;
+        width: 100%;
+        transition: all 0.4s ease;
+    }
+    
+    .links.hidden {
+        opacity: 0;
+        transform: translateY(-20px);
+        max-height: 0;
+        gap: 0;
+    }
+    
+    .link {
+        padding: 12px 20px;
+        font-size: 20px;
+        width: 100%;
+        animation: slideInFromTopMobile 0.5s ease-out backwards;
+        transition: all 0.3s ease;
+    }
+
+    .link.hidden {
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    @keyframes slideInFromTopMobile {
+        from {
+            opacity: 0;
+            transform: translateY(-15px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .hide {
+        display: block;
+        margin-top: -10px;
+        margin-bottom: 5px;
+        margin-left: 0;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+    
+    .show-links {
+        display: block;
+        top: 90px;
+        padding: 10px 15px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {    
+    .nav {
+        gap: 12px;
+        padding: 12px 15px;
+    }
+    
+    body {
+        padding-top: 120px;
+    }
+    
+    .links {
+        gap: 10px;
+    }
+    
+    .link {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+    
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .show-links {
+        top: 110px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
