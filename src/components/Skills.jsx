@@ -92,10 +92,12 @@ const duplicate = [...dataSkills, ...dataSkills]
 export default function Skills() {
     return (
         <section id="skills">
+        <section id='learn'>
         <div className='skills'>
             <h1 className='title'>Skills</h1>
             <Slider />
         </div>
+        </section>
         </section>
     )
 }

@@ -259,8 +259,10 @@
     }
     
     .hi button {
-        width: 200px;
-        height: 45px;
+        width: 180px;
+        height: 80px;
+        line-height: 30px;
+        font-size: 1rem;
     }
 }
 

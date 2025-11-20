@@ -1,21 +1,26 @@
 import '../styles/hero.css';
 
 export default function Hero() {
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
-        <>
-            <div className="hero">
-                <Text />
-                <Img />
-            </div>
-        </>
+        <div className="hero">
+            <Text scrollToSection={scrollToSection} />
+            <Img />
+        </div>
     )
 }
 
-function Text() {
+function Text({ scrollToSection }) {
     return (
         <div className="hi">
             <p>Hi, I'm Bogdan <br />- beginner Frontend developer!</p>
-            <button>Learn more</button>
+            <button onClick={() => scrollToSection('learn')}>Learn more</button>
         </div>
     )
 }

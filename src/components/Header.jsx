@@ -2,92 +2,77 @@ import { useEffect, useState } from 'react';
 import '../styles/header.css';
 
 export default function Header() {
-    return (
-        <>
-        <section id="main">
-        <div className="nav">
-            <div className="nav-logo" onClick={() => window.open('https://github.com/everidiy', '_blank')}>
-                <Logo />
-            </div>
-            <div className="nav-links">
-               <Links /> 
-            </div>
-        </div>
-        </section>
-        </>
-    )
-}
+    const [isNavVisible, setIsNavVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-function Logo() {
-    return (
-        <>
-        <div className="logo">
-            <img src="/logo.jpg" alt="me" />
-        </div>
-        </>
-    )
-}
-
-function Links() {
     useEffect(() => {
-        const checkMobyleStyle = () => {
+        const checkMobileStyle = () => {
             const mobile = window.innerWidth <= 768;
-            setIsMobile(mobile)
-            setIsVisible(!mobile)
+            setIsMobile(mobile);
+            setIsNavVisible(!mobile);
         }
 
-        checkMobyleStyle();
+        checkMobileStyle();
+        window.addEventListener("resize", checkMobileStyle);
 
-        window.addEventListener("resize", checkMobyleStyle);
-
-        return () => window.removeEventListener('resize', checkMobyleStyle)
-
-    }, [])
-
-    const [isVisible, setIsVisible] = useState(true);
-    const [isMobile, setIsMobile] = useState(false);
+        return () => window.removeEventListener('resize', checkMobileStyle);
+    }, []);
 
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
+            if (isMobile) {
+                setIsNavVisible(false);
+            }
         }
     };
 
-    const handleHide = () => {
-        setIsVisible(false);
-    }
-
-    const handleShow = () => {
-        setIsVisible(true);
-    }
+    const toggleNav = () => {
+        setIsNavVisible(!isNavVisible);
+    };
 
     return (
         <>
-            <div className={`nav ${isVisible ? '' : 'collapsed'}`}>
-                <div className="nav-logo">
+            {}
+            {isMobile && !isNavVisible && (
+                <button className='show-links' onClick={toggleNav}>
+                    ☰
+                </button>
+            )}
+
+            {}
+            <nav className={`nav ${isNavVisible ? 'active' : ''} ${!isMobile && isNavVisible ? 'collapsed' : ''}`}>
+                <div className="nav-logo" onClick={() => window.open('https://github.com/everidiy', '_blank')}>
                     <div className="logo">
-                        <img src="/logo.jpg" alt="Logo" />
+                        <img src="/logo.jpg" alt="me" />
                     </div>
                 </div>
                 
                 <div className="nav-links">
-                    <div className={`links ${isVisible ? '' : 'hidden'}`}>
+                    <div className="links">
                         <div className="link" onClick={() => scrollToSection('main')}>Main</div>
                         <div className="link" onClick={() => scrollToSection('about')}>About</div>
                         <div className="link" onClick={() => scrollToSection('skills')}>Skills</div>
                         <div className="link" onClick={() => scrollToSection('projects')}>Projects</div>
                         <div className="link" onClick={() => scrollToSection('contact')}>Contact</div>
-                        <button className='hide' onClick={handleHide}>⬆</button>
+                        
+                        {}
+                        {!isMobile && (
+                            <button className='hide' onClick={() => setIsNavVisible(false)}>
+                                ⬆
+                            </button>
+                        )}
+                        
+                        {}
+                        {isMobile && (
+                            <button className='hide' onClick={toggleNav}>
+                                ✕
+                            </button>
+                        )}
                     </div>
                 </div>
-            </div>
-            
-            {!isVisible && (
-                <button className='show-links' onClick={handleShow}>
-                    ⬇
-                </button>
-            )}
+            </nav>
         </>
     );
 }
