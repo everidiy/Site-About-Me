@@ -16,7 +16,7 @@ const dataContacts = [
         img: "/githubsecond.png",
         text: 'View my projects',
         link: 'https://github.com/everidiy',
-        color: '#242424ff'
+        color: '#464646ff'
     },
     {
         id: 3,

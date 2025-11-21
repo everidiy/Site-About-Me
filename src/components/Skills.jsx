@@ -146,10 +146,12 @@ function Slider() {
     const handleMouseMove = (e) => {
         if (!isDragging) return;
         e.preventDefault();
-        const x = e.pageX - sliderRef.current.offsetLeft
-        const walk = (x - startX) * 2
+        
+        const x = e.pageX;
+        const walk = (x - startX) * 2;
+        
         sliderRef.current.scrollLeft = scrollLeft - walk;
-    }
+    };
 
     const handleMouseLeave = (e) => {
         setIsDragging(false)
@@ -209,8 +211,10 @@ function Slider() {
         <div style={{ 
                 textAlign: 'center', 
                 marginTop: '10px', 
-                fontSize: '14px', 
-                color: 'var(--text-secondary)' 
+                fontSize: '16px', 
+                color: 'var(--text-secondary)',
+                fontWeight: 'bold',
+                marginTop: '35px'
             }}>
                 You can grab this!
             </div>
