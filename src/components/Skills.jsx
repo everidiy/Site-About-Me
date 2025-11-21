@@ -118,7 +118,7 @@ function Slider() {
 
         const animate = () => {
             if (slider && autoScroll) {
-                slider.scrollLeft += 1;
+                slider.scrollLeft += 3.5;
 
                 if (slider.scrollLeft >= slider.scrollWidth / 2) {
                     slider.scrollLeft = 0;
@@ -217,7 +217,7 @@ function Slider() {
                 marginTop: '35px'
             }}>
                 You can grab this!
-            </div>
+        </div>
         </>
     )
 }

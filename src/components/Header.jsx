@@ -5,6 +5,7 @@ export default function Header() {
     const [isNavVisible, setIsNavVisible] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
@@ -43,13 +44,29 @@ export default function Header() {
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
             if (isMobile) {
-                setIsNavVisible(false);
+                closeNav();
             }
         }
     };
 
+    const openNav = () => {
+        setIsAnimating(true);
+        setIsNavVisible(true);
+        setTimeout(() => setIsAnimating(false), 400);
+    };
+
+    const closeNav = () => {
+        setIsAnimating(true);
+        setIsNavVisible(false);
+        setTimeout(() => setIsAnimating(false), 400);
+    };
+
     const toggleNav = () => {
-        setIsNavVisible(!isNavVisible);
+        if (isNavVisible) {
+            closeNav();
+        } else {
+            openNav();
+        }
     };
 
     return (
@@ -62,7 +79,7 @@ export default function Header() {
             )}
 
             {}
-            <nav className={`nav ${isNavVisible ? 'active' : ''} ${!isMobile && isNavVisible ? 'collapsed' : ''}`}>
+            <nav className={`nav ${isNavVisible ? 'active' : ''} ${isAnimating ? 'animating' : ''} ${!isMobile && isNavVisible ? 'collapsed' : ''}`}>
                 <div className="nav-logo" onClick={() => window.open('https://github.com/everidiy', '_blank')}>
                     <div className="logo">
                         <img src="/logo.jpg" alt="me" />
@@ -70,7 +87,7 @@ export default function Header() {
                 </div>
                 
                 <div className="nav-links">
-                    <div className="links">
+                    <div className={`links ${isNavVisible ? 'visible' : 'hidden'}`}>
                         <div className="link" onClick={() => scrollToSection('main')}>Main</div>
                         <div className="link" onClick={() => scrollToSection('about')}>About</div>
                         <div className="link" onClick={() => scrollToSection('skills')}>Skills</div>
@@ -87,14 +104,14 @@ export default function Header() {
 
                         {}
                         {!isMobile && (
-                            <button className='hide' onClick={() => setIsNavVisible(false)}>
+                            <button className='hide' onClick={closeNav}>
                                 ⬆
                             </button>
                         )}
                         
                         {}
                         {isMobile && (
-                            <button className='hide' onClick={toggleNav}>
+                            <button className='hide' onClick={closeNav}>
                                 ✕
                             </button>
                         )}
