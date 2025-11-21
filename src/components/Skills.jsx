@@ -118,7 +118,7 @@ function Slider() {
 
         const animate = () => {
             if (slider && autoScroll) {
-                slider.scrollLeft += 3.5;
+                slider.scrollLeft += 5.5;
 
                 if (slider.scrollLeft >= slider.scrollWidth / 2) {
                     slider.scrollLeft = 0;
@@ -214,7 +214,7 @@ function Slider() {
                 fontSize: '16px', 
                 color: 'var(--text-secondary)',
                 fontWeight: 'bold',
-                marginTop: '35px'
+                marginTop: '20px'
             }}>
                 You can grab this!
         </div>
