@@ -89,6 +89,58 @@
     }
 }
 
+@media (min-width: 2000px) {
+    .skills {
+        padding: 100px 200px;
+        height: 65vh;
+    }
+    
+    .slider-container {
+        height: 500px;
+    }
+    
+    .card {
+        width: 400px;
+        height: 450px;
+    }
+    
+    .card img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .card p {
+        width: 280px;
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .skills {
+        padding: 80px 150px;
+        height: 60vh;
+    }
+    
+    .slider-container {
+        height: 450px;
+    }
+    
+    .card {
+        width: 350px;
+        height: 400px;
+    }
+    
+    .card img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .card p {
+        width: 250px;
+        font-size: 20px;
+    }
+}
+
 @media (max-width: 1024px) {
     .skills {
         padding: 40px 50px;

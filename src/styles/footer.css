@@ -40,7 +40,7 @@
 
 .logo-footer:hover img {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 30px rgba(206, 241, 123, 0.5);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 .number h2, .email h2 {
@@ -48,6 +48,36 @@
     font-size: 1.2rem;
     font-weight: 600;
     position: relative;
+}
+
+@media (min-width: 1600px) {
+    .footer {
+        padding: 40px 100px;
+    }
+    
+    .logo-footer img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .number h2, .email h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    .footer {
+        padding: 50px 150px;
+    }
+    
+    .logo-footer img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .number h2, .email h2 {
+        font-size: 1.6rem;
+    }
 }
 
 @media (max-width: 768px) {

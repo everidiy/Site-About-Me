@@ -90,6 +90,78 @@
     transform: translateY(-2px);
 }
 
+@media (min-width: 2000px) {
+    .projects {
+        padding: 100px 200px;
+        min-height: 80vh;
+    }
+    
+    .title-project {
+        font-size: 56px;
+        margin-bottom: 50px;
+    }
+    
+    .container-projects {
+        gap: 90px;
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+    
+    .card-project {
+        width: 400px;
+        height: 450px;
+    }
+    
+    .card-project h3 {
+        font-size: 38px;
+    }
+    
+    .card-project img {
+        width: 160px;
+    }
+    
+    .project-links a {
+        padding: 14px 28px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .projects {
+        padding: 80px 150px;
+        min-height: 70vh;
+    }
+    
+    .title-project {
+        font-size: 48px;
+        margin-bottom: 40px;
+    }
+    
+    .container-projects {
+        gap: 70px;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+    .card-project {
+        width: 350px;
+        height: 400px;
+    }
+    
+    .card-project h3 {
+        font-size: 34px;
+    }
+    
+    .card-project img {
+        width: 140px;
+    }
+    
+    .project-links a {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 1024px) {
     .projects {
         min-height: 50vh;

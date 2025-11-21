@@ -148,6 +148,79 @@
     opacity: 0.7;
 }
 
+
+@media (min-width: 2000px) {
+    .connection {
+        padding: 120px 200px;
+        min-height: 45vh;
+    }
+    
+    .title-contact {
+        font-size: 2rem;
+        margin-bottom: 100px;
+    }
+    
+    .container-contacts {
+        gap: 80px;
+        margin-bottom: 80px;
+    }
+    
+    .contact-card {
+        width: 420px;
+        height: 500px;
+    }
+    
+    .contact-card-body img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .contact-card-body p {
+        font-size: 22px;
+    }
+    
+    .contact-link-btn {
+        padding: 16px 32px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .connection {
+        padding: 100px 150px;
+        min-height: 40vh;
+    }
+    
+    .title-contact {
+        font-size: 1.8rem;
+        margin-bottom: 80px;
+    }
+    
+    .container-contacts {
+        gap: 60px;
+        margin-bottom: 60px;
+    }
+    
+    .contact-card {
+        width: 380px;
+        height: 450px;
+    }
+    
+    .contact-card-body img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .contact-card-body p {
+        font-size: 20px;
+    }
+    
+    .contact-link-btn {
+        padding: 14px 28px;
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 768px) {
     .connection {
         padding: 40px 20px;

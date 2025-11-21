@@ -8,7 +8,7 @@ const dataContacts = [
         img: "/telegram.png",
         text: 'Write a message',
         link: 'https://t.me/everidiy',
-        color: '#4dbcd8ff'
+        color: '#24bde4ff'
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const dataContacts = [
         img: "/githubsecond.png",
         text: 'View my projects',
         link: 'https://github.com/everidiy',
-        color: '#141414ff'
+        color: '#242424ff'
     },
     {
         id: 3,
