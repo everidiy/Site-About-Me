@@ -185,13 +185,13 @@
     }
     
     .slider-container {
-        height: 220px;
+        height: 250px;
         padding: 10px;
     }
     
     .card {
-        width: 170px;
-        height: 190px;
+        width: 180px;
+        height: 200px;
     }
     
     .card img {
@@ -213,7 +213,6 @@
     
     .slider-track {
         gap: 30px;
-        border: 2px solid red;
     }
 }
 

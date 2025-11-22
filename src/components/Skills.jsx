@@ -103,7 +103,7 @@ export default function Skills() {
                 fontSize: '20px', 
                 color: 'var(--text-secondary)',
                 fontWeight: 'bold',
-                marginTop: '25px'
+                marginTop: '20px'
             }}>
                You can grab this! 
         </div>
