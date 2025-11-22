@@ -181,18 +181,48 @@ function Slider() {
         setStartX(e.touches[0].pageX - sliderRef.current.offsetLeft)
         setScrollLeft(sliderRef.current.scrollLeft)
         setAutoScroll(false)
+
+        if (window.touchInertia) {
+            cancelAnimationFrame(window.touchInertia);
+        }
     };
 
     const handleTouchMove = (e) => {
         if (!isDragging) return;
         const x = e.touches[0].pageX - sliderRef.current.offsetLeft
-        const walk = (x - startX) * 2;
+        const walk = (x - startX) * 1.5;
+        
         sliderRef.current.scrollLeft = scrollLeft - walk;
+
+        window.lastTouchMove = {
+            time: Date.now(),
+            delta: walk,
+        }
     }
 
     const handleTouchEnd = () => {
         setIsDragging(false);
-        setTimeout(() => setAutoScroll(true), 2000);
+
+        if (window.lastTouchMove && (Date.now() - window.lastTouchMove < 100)) {
+            const inertia = (window.lastTouchMove.delta * 0.5)
+            let inertiaScroll = sliderRef.current.scrollLeft;
+
+            const applyInertia = () => {
+                inertiaScroll -= inertia;
+                sliderRef.current.scrollLeft = inertiaScroll
+                inertia *= 0.95
+
+                if (Math.abs(inertia) > 0.5) {
+                    window.touchInertia = requestAnimationFrame(applyInertia)
+                } else {
+                    setTimeout(() => setAutoScroll(true), 2000);
+                }
+            };
+
+            window.touchInertia = requestAnimationFrame(applyInertia)
+        } else {
+            setTimeout(() => setAutoScroll(true), 2000);
+        }
     };
 
     return (
