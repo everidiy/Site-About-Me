@@ -178,7 +178,7 @@ function Slider() {
     //Mobile
     const handleTouchStart = (e) => {
         setIsDragging(true)
-        setStartX(e.touches[0].pageX - sliderRef.current.offsetLeft)
+        setStartX(e.touches[0].clientX);
         setScrollLeft(sliderRef.current.scrollLeft)
         setAutoScroll(false)
     };
@@ -187,7 +187,7 @@ function Slider() {
         if (!isDragging || !sliderRef.current) return;
         e.preventDefault();
 
-        const x = e.touches[0].pageX - sliderRef.current.offsetLeft
+        const x = e.touches[0].clientX;
         const walk = (x - startX) * 1.5;
         
         sliderRef.current.scrollLeft = scrollLeft - walk;
