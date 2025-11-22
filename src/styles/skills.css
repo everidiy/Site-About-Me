@@ -31,7 +31,6 @@
     overscroll-behavior: contain;
 }
 
-/* Скрываем стандартный скроллбар */
 .slider-container::-webkit-scrollbar {
     display: none;
 }
@@ -129,7 +128,7 @@
 @media (min-width: 1600px) {
     .skills {
         padding: 80px 150px;
-        height: 60vh;
+        height: 75vh;
     }
     
     .slider-container {

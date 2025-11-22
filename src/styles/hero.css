@@ -300,7 +300,6 @@
     
     .hi p {
         font-size: 1.5rem;
-        line-height: 1.4;
         max-width: 400px;
     }
     
@@ -326,6 +325,7 @@
     
     .hi p {
         font-size: 1.5rem;
+        max-width: 400px;
     }
     
     .hi button {
@@ -350,6 +350,7 @@
     
     .hi p {
         font-size: 1.3rem;
+        max-width: 400px;
     }
     
     .hi button {
