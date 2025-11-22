@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     height: 100%;
 }
@@ -24,7 +24,7 @@
 }
 
 .node:hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(80, 80, 80, 0.5);
     transform: translateY(-5px);
 }
 
