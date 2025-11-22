@@ -97,6 +97,16 @@ export default function Skills() {
         <div className='skills'>
             <h1 className='title'>Skills</h1>
             <Slider />
+            <div style={{ 
+                textAlign: 'center', 
+                marginTop: '10px', 
+                fontSize: '20px', 
+                color: 'var(--text-secondary)',
+                fontWeight: 'bold',
+                marginTop: '20px'
+            }}>
+               You can grab this! 
+        </div>
         </div>
         </section>
         </section>
@@ -109,6 +119,7 @@ function Slider() {
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const [autoScroll, setAutoScroll] = useState(true);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         if (!autoScroll || !sliderRef.current) return;
@@ -116,9 +127,23 @@ function Slider() {
         const slider = sliderRef.current;
         let animationId;
 
+        const checkMobile = () => {
+            const mobile = window.innerWidth <= 768;
+            setIsMobile(mobile)
+        }
+
+        checkMobile();
+
+        const handleResize = () => {
+            checkMobile();
+        }
+
+        window.addEventListener('resize', handleResize)
+
         const animate = () => {
             if (slider && autoScroll) {
-                slider.scrollLeft += 5.5;
+                const superSpeed = isMobile ? 10 : 3
+                slider.scrollLeft += superSpeed;
 
                 if (slider.scrollLeft >= slider.scrollWidth / 2) {
                     slider.scrollLeft = 0;
@@ -132,35 +157,22 @@ function Slider() {
 
         return () => {
             cancelAnimationFrame(animationId);
+            window.removeEventListener('resize', handleResize)
         };
-    }, [autoScroll]);
+    }, [autoScroll, isMobile]);
 
     //Desktop
-    const handleMouseDown = (e) => {
-        setIsDragging(true)
-        setStartX(e.pageX - sliderRef.current.offsetLeft)
-        setScrollLeft(sliderRef.current.scrollLeft)
-        setAutoScroll(false)
-    };
+    const handleWheel = (e) => {
+        if (!sliderRef.current) return;
 
-    const handleMouseMove = (e) => {
-        if (!isDragging) return;
         e.preventDefault();
+        e.stopPropagation();
         
-        const x = e.pageX;
-        const walk = (x - startX) * 2;
-        
-        sliderRef.current.scrollLeft = scrollLeft - walk;
-    };
+        sliderRef.current.scrollLeft += e.deltaY;
+        setAutoScroll(false)
 
-    const handleMouseLeave = (e) => {
-        setIsDragging(false)
-        setTimeout(() => setAutoScroll(true), 2000)
-    }
-
-    const handleMouseUp = (e) => {
-        setIsDragging(false)
-        setTimeout(() => setAutoScroll(true), 2000)
+        clearTimeout(window.scrollTimeout);
+        window.scrollTimeout = setTimeout(() => setAutoScroll(true), 2000)
     }
 
     //Mobile
@@ -188,14 +200,11 @@ function Slider() {
         <div
         className="slider-container"
         ref={sliderRef}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
+        onWheel={handleWheel}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+        style={{ cursor: 'grab' }}
         >
             <div className="slider-track">
                 {duplicate.map((skill, index) => {
@@ -207,16 +216,6 @@ function Slider() {
                     />
                 })}
             </div> 
-        </div>
-        <div style={{ 
-                textAlign: 'center', 
-                marginTop: '10px', 
-                fontSize: '16px', 
-                color: 'var(--text-secondary)',
-                fontWeight: 'bold',
-                marginTop: '20px'
-            }}>
-                You can grab this!
         </div>
         </>
     )

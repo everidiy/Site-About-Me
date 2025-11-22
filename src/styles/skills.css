@@ -28,6 +28,7 @@
     cursor: grab;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 /* Скрываем стандартный скроллбар */

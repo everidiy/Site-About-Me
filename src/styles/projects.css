@@ -23,6 +23,8 @@
     gap: 50px;
     margin-left: 50px;
     margin-right: 50px;
+    max-width: 1200px;
+    margin:  0 auto;
 }
 
 .card-project {
@@ -74,6 +76,7 @@
     gap: 15px;
     justify-content: center;
     margin-top: 15px;
+    font-weight: bold;
 }
 
 .project-links a {
@@ -102,9 +105,9 @@
     }
     
     .container-projects {
-        gap: 90px;
-        margin-left: 150px;
-        margin-right: 150px;
+        gap: 100px;
+        max-width: 1600px;
+        margin: 0 auto;
     }
     
     .card-project {
@@ -139,8 +142,8 @@
     
     .container-projects {
         gap: 70px;
-        margin-left: 100px;
-        margin-right: 100px;
+        max-width: 1400px;
+        margin: 0 auto;
     }
     
     .card-project {
