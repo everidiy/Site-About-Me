@@ -115,9 +115,6 @@ export default function Skills() {
 
 function Slider() {
     const sliderRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
     const [autoScroll, setAutoScroll] = useState(true);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -176,47 +173,7 @@ function Slider() {
     }
 
     //Mobile
-    const handleTouchStart = (e) => {
-        setIsDragging(true)
-        setStartX(e.touches[0].clientX);
-        setScrollLeft(sliderRef.current.scrollLeft)
-        setAutoScroll(false)
-    };
-
-    const handleTouchMove = (e) => {
-        if (!isDragging || !sliderRef.current) return;
-        e.preventDefault();
-
-        const x = e.touches[0].clientX;
-        const walk = (x - startX) * 1.5;
-        
-        sliderRef.current.scrollLeft = scrollLeft - walk;
-    }
-
-    const handleTouchEnd = () => {
-        setIsDragging(false);
-
-        // if (window.lastTouchMove && (Date.now() - window.lastTouchMove < 100)) {
-        //     const inertia = (window.lastTouchMove.delta * 0.5)
-        //     let inertiaScroll = sliderRef.current.scrollLeft;
-
-        //     const applyInertia = () => {
-        //         inertiaScroll -= inertia;
-        //         sliderRef.current.scrollLeft = inertiaScroll
-        //         inertia *= 0.95
-
-        //         if (Math.abs(inertia) > 0.5) {
-        //             window.touchInertia = requestAnimationFrame(applyInertia)
-        //         } else {
-        //             setTimeout(() => setAutoScroll(true), 2000);
-        //         }
-        //     };
-
-        //     window.touchInertia = requestAnimationFrame(applyInertia)
-        // } else {
-            setTimeout(() => setAutoScroll(true), 2000);
-        // }
-    };
+    
 
     return (
         <>
@@ -224,10 +181,7 @@ function Slider() {
         className="slider-container"
         ref={sliderRef}
         onWheel={handleWheel}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        style={{ cursor: 'grab' }}
+        style={{ cursor: 'grab', overflowX: 'auto' }}
         >
             <div className="slider-track">
                 {duplicate.map((skill, index) => {
