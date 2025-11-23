@@ -76,21 +76,21 @@ const dataSkills = [
         id: 11,
         name: 'Vite',
         img: "/vite.png",
-        text: 'Cool and fast build tool',
+        text: 'Cool & fast build tool',
         stage: 'Basic'
     },
     {
         id: 12,
         name: 'React Query',
         img: "/react-query.svg",
-        text: 'Server state management',
+        text: 'Server manager',
         stage: 'Untouched '
     },
     {
         id: 13,
         name: 'React Router',
-        img: "/react-router.svg",
-        text: 'Navigation for React apps',
+        img: "/react-router.webp",
+        text: 'Super navigation',
         stage: 'Untouched '
     },
     {
@@ -104,7 +104,7 @@ const dataSkills = [
         id: 15,
         name: 'Git',
         img: "/git.png",
-        text: 'Version control system',
+        text: 'Version system',
         stage: 'Basic'
     }
 ]
