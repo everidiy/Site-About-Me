@@ -70,7 +70,7 @@ const dataSkills = [
         name: 'Zustand',
         img: "/zustand.svg",
         text: 'Just API for React',
-        stage: 'Untouched '
+        stage: 'Untouched'
     },
     {
         id: 11,
@@ -84,14 +84,14 @@ const dataSkills = [
         name: 'React Query',
         img: "/react-query.svg",
         text: 'Server manager',
-        stage: 'Untouched '
+        stage: 'Untouched'
     },
     {
         id: 13,
         name: 'React Router',
         img: "/react-router.webp",
         text: 'Super navigation',
-        stage: 'Untouched '
+        stage: 'Untouched'
     },
     {
         id: 14,
@@ -112,12 +112,34 @@ const dataSkills = [
 const duplicate = [...dataSkills]
 
 export default function Skills() {
+    const [selectedStage, setSelectedStage] = useState('All');
+
+    const handleSelectedChange = (e) => {
+        setSelectedStage(e.target.value)
+    }
+
+    const filteredSkills = selectedStage === 'All' ? 
+    duplicate : duplicate.filter(skill => skill.stage === selectedStage);
+
     return (
         <section id="skills">
         <section id='learn'>
         <div className='skills'>
             <h1 className='title'>Skills</h1>
-            <Slider />
+            <select
+            className='findStage'
+            name="findStage"
+            id="findStage"
+            value={selectedStage}
+            onChange={handleSelectedChange}
+            >
+                <option value="All">All</option>
+                <option value="Basic">Basic</option>
+                <option value="Middle">Middle</option>
+                <option value="Pro">Pro</option>
+                <option value="Untouched">Untouched</option>
+            </select>
+            <Slider filteredSkills={filteredSkills} />
             <div style={{ 
                 textAlign: 'center', 
                 marginTop: '10px', 
@@ -134,7 +156,7 @@ export default function Skills() {
     )
 }
 
-function Slider() {
+function Slider({ filteredSkills }) {
     const sliderRef = useRef(null);
 
     //Desktop
@@ -153,7 +175,7 @@ function Slider() {
             style={{ cursor: 'grab' }}
         >
             <div className="slider-track">
-                {duplicate.map((skill, index) => {
+                {filteredSkills.map((skill, index) => {
                     return <Card
                     key={`${skill.id}-${index}`}
                     name={skill.name}
@@ -170,10 +192,9 @@ function Slider() {
 
 function Card({ name, img, text, stage }) {
     const dataStage = {
-        styleStageBasic: '#4CAF50',
-        styleStageMiddle: '#ffd000ff', 
-        styleStagePro: '#F44336',
-
+        styleStageBasic: 'linear-gradient(135deg, #43A047, #66BB6A)',
+        styleStageMiddle: 'linear-gradient(135deg, #FFB300, #FFCA28)',
+        styleStagePro: 'linear-gradient(135deg, #E53935, #EF5350)',
     };
     const renderStage = () => {
         if (stage == 'Basic') {
@@ -181,7 +202,7 @@ function Card({ name, img, text, stage }) {
                 <div className="stage">
                     <div
                     className='stageBlock'
-                    style={{ backgroundColor: `${dataStage.styleStageBasic}` }}
+                    style={{ background: `${dataStage.styleStageBasic}` }}
                     ></div>
                     <div
                     className='stageBlock'
@@ -196,11 +217,11 @@ function Card({ name, img, text, stage }) {
                 <div className="stage">
                     <div
                     className='stageBlock'
-                    style={{ backgroundColor: `${dataStage.styleStageMiddle}` }}
+                    style={{ background: `${dataStage.styleStageMiddle}` }}
                     ></div>
                     <div
                     className='stageBlock'
-                    style={{ backgroundColor: `${dataStage.styleStageMiddle}` }}
+                    style={{ background: `${dataStage.styleStageMiddle}` }}
                     ></div>
                     <div
                     className='stageBlock'
@@ -212,15 +233,15 @@ function Card({ name, img, text, stage }) {
                 <div className="stage">
                     <div
                     className='stageBlock'
-                    style={{ backgroundColor: `${dataStage.styleStagePro}` }}
+                    style={{ background: `${dataStage.styleStagePro}` }}
                     ></div>
                     <div
                     className='stageBlock'
-                    style={{ backgroundColor: `${dataStage.styleStagePro}` }}
+                    style={{ background: `${dataStage.styleStagePro}` }}
                     ></div>
                     <div
                     className='stageBlock'
-                    style={{ backgroundColor: `${dataStage.styleStagePro}` }}
+                    style={{ background: `${dataStage.styleStagePro}` }}
                     ></div>
                 </div>
             );

@@ -29,7 +29,7 @@
 
 .card-project {
     width: 300px;
-    height: 350px;
+    min-height: 400px;
     border: 2px solid var(--accent-color);
     border-radius: 15px;
     padding: 20px 10px;
@@ -61,14 +61,49 @@
     object-fit: contain;
 }
 
-.card-project:hover {
-    transform: scale(1.02);
-}
-
 .card-project p {
     width: 200px;
     text-align: center;
     margin-top: 10px;
+}
+
+.technologies {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgb(40, 40, 40);
+    box-shadow: 0 0 30px rgba(40, 40, 40, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 220px;
+}
+
+.custom-details summary {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    text-align: center;
+}
+
+.technologies p {
+    color: white;
+    font-size: 14px;
+    text-transform: lowercase;
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.technologies p.open {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 100px;
+    margin-top: 10px;
+    color: white;
 }
 
 .project-links {
@@ -89,8 +124,9 @@
 }
 
 .project-links a:hover {
-    background-color: var(--text-secondary);
-    transform: translateY(-2px);
+    background-color: var(--bg-primary);
+    color: var(--accent-color);
+    transform: scale(1.01);
 }
 
 @media (min-width: 2000px) {
@@ -112,7 +148,7 @@
     
     .card-project {
         width: 400px;
-        height: 450px;
+        min-height: 450px;
     }
     
     .card-project h3 {
@@ -148,7 +184,7 @@
     
     .card-project {
         width: 350px;
-        height: 400px;
+        min-height: 450px;
     }
     
     .card-project h3 {
@@ -178,7 +214,7 @@
     
     .card-project {
         width: 220px;
-        height: 280px;
+        min-height: 350px;
     }
     
     .card-project img {
@@ -192,6 +228,22 @@
     .project-links a {
         padding: 8px 16px;
         font-size: 20px;
+    }
+
+    .technologies {
+       width: 160px;
+    }
+
+    .technologies summary {
+        font-size: 14px;
+    }
+
+    .technologies p {
+        font-size: 10px;
+    }
+
+    .technologies p.open {
+        width: 140px;
     }
 }
 
@@ -213,7 +265,7 @@
     
     .card-project {
         width: 180px;
-        height: 220px;
+        min-height: 220px;
     }
     
     .card-project h3 {
@@ -234,6 +286,22 @@
         padding: 6px 12px;
         font-size: 18px;
     }
+    
+    .technologies {
+       width: 120px;
+    }
+
+    .technologies summary {
+        font-size: 12px;
+    }
+
+    .technologies p {
+        font-size: 10px;
+    }
+
+    .technologies p.open {
+        width: 105px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -249,7 +317,7 @@
     
     .card-project {
         width: 140px;
-        height: 190px;
+        min-height: 190px;
     }
     
     .card-project h3 {
@@ -266,7 +334,23 @@
     }
     
     .project-links a {
-        padding: 5px 10px;
-        font-size: 14px;
+        padding: 5px;
+        font-size: 12px;
+    }
+    
+    .technologies {
+       width: 90px;
+    }
+
+    .technologies summary {
+        font-size: 10px;
+    }
+
+    .technologies p {
+        font-size: 8px;
+    }
+
+    .technologies p.open {
+        width: 70px;
     }
 }

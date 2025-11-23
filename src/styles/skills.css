@@ -9,6 +9,26 @@
     margin-bottom: 10px;
 }
 
+.findStage {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 3px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 150px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px;
+}
+
 .skills {
     padding: 60px 100px;
     height: 60vh;
@@ -16,6 +36,10 @@
     color: var(--text-primary);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .slider-container {
@@ -185,7 +209,7 @@
 @media (min-width: 1400px) {
     .skills {
         padding: 40px 50px;
-        height: 65vh;
+        height: 45vh;
     }
     
     .slider-container {
@@ -324,8 +348,12 @@
 
 @media (max-width: 500px) {
     .skills {
-        padding: 30px 20px;
-        height: 55vh;
+        padding: 60px 20px;
+        height: 50vh;
+    }
+
+    .findStage {
+        margin: 20px;
     }
     
     .slider-container {
