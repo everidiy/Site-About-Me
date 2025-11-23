@@ -11,7 +11,7 @@
 
 .skills {
     padding: 60px 100px;
-    height: 50vh;
+    height: 60vh;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     border-top: 1px solid var(--border-color);
@@ -23,7 +23,7 @@
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    height: 400px;
+    height: 500px;
     padding: 20px;
     cursor: grab;
     scroll-behavior: smooth;
@@ -55,7 +55,7 @@
 
 .card {
     width: 300px;
-    height: 350px;
+    height: 470px;
     border: 2px solid var(--accent-color);
     border-radius: 15px;
     padding: 20px 10px;
@@ -87,6 +87,7 @@
     width: 120px;
     height: 120px;
     background-color: var(--bg-secondary);
+    border: 2px solid var(--accent-color);
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0px 0px 20px var(--shadow-color);
@@ -97,6 +98,33 @@
     width: 200px;
     text-align: center;
     margin-top: 10px;
+}
+
+.card .stage {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .stage .stageBlock {
+    width: 50px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px var(--shadow-color);
+}
+
+.stageOfSkill {
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: -20px;
+}
+
+.stageOfSkill p {
+    font-size: 20px;
 }
 
 /* Адаптация для больших экранов */
@@ -129,7 +157,7 @@
 @media (min-width: 1600px) {
     .skills {
         padding: 80px 150px;
-        height: 75vh;
+        height: 55vh;
     }
     
     .slider-container {
@@ -152,19 +180,19 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1400px) {
     .skills {
         padding: 40px 50px;
-        height: 35vh;
+        height: 65vh;
     }
     
     .slider-container {
-        height: 320px;
+        height: 400px;
     }
     
     .card {
         width: 220px;
-        height: 280px;
+        height: 350px;
     }
     
     .card img {
@@ -176,22 +204,78 @@
         width: 180px;
         font-size: 16px;
     }
+    
+    .card .stage {
+        gap: 7px;
+        height: 40px;
+    }
+
+    .card .stage .stageBlock {
+        width: 40px;
+        height: 15px;
+    }
+
+    .stageOfSkill p {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 1400px) {
+    .skills {
+        padding: 40px 50px;
+        height: 45vh;
+    }
+    
+    .slider-container {
+        height: 400px;
+    }
+    
+    .card {
+        width: 220px;
+        height: 350px;
+    }
+    
+    .card img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .card p {
+        width: 180px;
+        font-size: 16px;
+    }
+    
+    .card .stage {
+        gap: 7px;
+        height: 40px;
+    }
+
+    .card .stage .stageBlock {
+        width: 40px;
+        height: 15px;
+    }
+
+    .stageOfSkill p {
+        font-size: 14px;
+        font-weight: bold;
+    }
 }
 
 @media (max-width: 768px) {
     .skills {
         padding: 30px 20px;
-        height: 42vh;
+        height: 55vh;
     }
     
     .slider-container {
-        height: 250px;
+        height: 350px;
         padding: 10px;
     }
     
     .card {
         width: 180px;
-        height: 200px;
+        height: 250px;
     }
     
     .card img {
@@ -214,34 +298,72 @@
     .slider-track {
         gap: 30px;
     }
+
+    .card .stage {
+        gap: 5px;
+        height: 30px;
+    }
+
+    .card .stage .stageBlock {
+        width: 30px;
+        height: 12px;
+    }
+
+    .stageOfSkill p {
+        font-size: 12px;
+        font-weight: bold;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .skills {
-        padding: 20px 15px;
-        height: 40vh;
+        padding: 30px 20px;
+        height: 55vh;
     }
     
     .slider-container {
-        height: 180px;
+        height: 35vh;
+        padding: 10px;
     }
     
     .card {
-        width: 150px;
-        height: 170px;
+        width: 180px;
+        height: 230px;
     }
     
     .card img {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
+        margin: 8px;
     }
     
     .card h3 {
-        font-size: 16px;
+        font-size: 18px;
+        margin-bottom: 5px;
     }
     
     .card p {
-        font-size: 11px;
-        width: 120px;
+        font-size: 12px;
+        width: 140px;
+        margin-top: 5px;
+    }
+    
+    .slider-track {
+        gap: 30px;
+    }
+
+    .card .stage {
+        gap: 5px;
+        height: 30px;
+    }
+
+    .card .stage .stageBlock {
+        width: 30px;
+        height: 12px;
+    }
+
+    .stageOfSkill p {
+        font-size: 12px;
+        font-weight: bold;
     }
 }

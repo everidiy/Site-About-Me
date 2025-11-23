@@ -6,89 +6,110 @@ const dataSkills = [
         id: 1, 
         name: 'HTML5',
         img: "/html.png",
-        text: '90s websites vibe'
+        text: '90s websites vibe',
+        stage: 'Middle'
     },
     {
         id: 2, 
         name: 'CSS3',
         img: "/css.png",
-        text: 'Designer\'s dream'
+        text: 'Designer\'s dream',
+        stage: 'Middle'
     },
     {
         id: 3, 
         name: 'JavaScript',
         img: "/js.png",
-        text: 'Makes you think... a lot'
+        text: 'Makes you think... a lot',
+        stage: 'Middle'
     },
     {
         id: 4, 
         name: 'React',
         img: "/react.png",
-        text: 'Not as scary as I thought'
+        text: 'Not as scary as I thought',
+        stage: 'Basic'
     },
     {
         id: 5, 
-        name: 'Go',
-        img: "/go.png",
-        text: 'Thanks, Yandex!'
+        name: 'API',
+        img: "/api.png",
+        text: 'Extra brain wrinkles',
+        stage: 'Basic'
     },
     {
-        id: 6,
-        name: 'Vercel',
-        img: "/vercel.jpg",
-        text: 'Deployment made easy'
+        id: 6, 
+        name: 'Go',
+        img: "/go.png",
+        text: 'Thanks, Yandex!',
+        stage: 'Basic'
     },
     {
         id: 7,
-        name: 'GitHub',
-        img: "/github.png",
-        text: 'Code platform site'
+        name: 'Vercel',
+        img: "/vercel.jpg",
+        text: 'Deployment made easy',
+        stage: 'Basic'
     },
     {
         id: 8,
-        name: 'TypeScript',
-        img: "/typescript.png",
-        text: 'JS with superpowers'
+        name: 'GitHub',
+        img: "/github.png",
+        text: 'Code platform site',
+        stage: 'Middle'
     },
     {
         id: 9,
-        name: 'Zustand',
-        img: "/zustand.svg",
-        text: 'Just API for React'
+        name: 'TypeScript',
+        img: "/typescript.png",
+        text: 'JS with superpowers',
+        stage: 'Basic'
     },
     {
         id: 10,
-        name: 'Vite',
-        img: "/vite.png",
-        text: 'Cool and fast build tool'
+        name: 'Zustand',
+        img: "/zustand.svg",
+        text: 'Just API for React',
+        stage: 'Untouched '
     },
     {
         id: 11,
-        name: 'React Query',
-        img: "/react-query.svg",
-        text: 'Server state management'
+        name: 'Vite',
+        img: "/vite.png",
+        text: 'Cool and fast build tool',
+        stage: 'Basic'
     },
     {
         id: 12,
-        name: 'React Router',
-        img: "/react-router.svg",
-        text: 'Navigation for React apps'
+        name: 'React Query',
+        img: "/react-query.svg",
+        text: 'Server state management',
+        stage: 'Untouched '
     },
     {
         id: 13,
-        name: 'Npm',
-        img: "/npm.png",
-        text: 'Package manager'
+        name: 'React Router',
+        img: "/react-router.svg",
+        text: 'Navigation for React apps',
+        stage: 'Untouched '
     },
     {
         id: 14,
+        name: 'Npm',
+        img: "/npm.png",
+        text: 'Package manager',
+        stage: 'Basic'
+    },
+    {
+        id: 15,
         name: 'Git',
         img: "/git.png",
-        text: 'Version control system'
+        text: 'Version control system',
+        stage: 'Basic'
     }
 ]
 
-const duplicate = [...dataSkills, ...dataSkills]
+const duplicate = [...dataSkills]
 
 export default function Skills() {
     return (
@@ -105,7 +126,7 @@ export default function Skills() {
                 fontWeight: 'bold',
                 marginTop: '20px'
             }}>
-               You can grab this! 
+               You can scroll this! 
         </div>
         </div>
         </section>
@@ -115,76 +136,21 @@ export default function Skills() {
 
 function Slider() {
     const sliderRef = useRef(null);
-    const [autoScroll, setAutoScroll] = useState(true);
-
-    const handleInteractionStart = () => {
-        setAutoScroll(false);
-    };
-
-    const handleInteractionEnd = () => {
-        setTimeout(() => setAutoScroll(true), 2000);
-    };
-
-    useEffect(() => {
-        if (!autoScroll || !sliderRef.current) return;
-
-        const slider = sliderRef.current;
-        let animationId;
-
-        const animate = () => {
-            if (slider && autoScroll) {
-                const isMobileView = window.innerWidth <= 768;
-                const superSpeed = isMobileView ? 10 : 3;
-                
-                slider.scrollLeft += superSpeed;
-
-                if (slider.scrollLeft >= slider.scrollWidth / 2) {
-                    slider.scrollLeft = 0;
-                }
-
-                animationId = requestAnimationFrame(animate);
-            }
-        };
-
-        animationId = requestAnimationFrame(animate);
-
-        return () => {
-            cancelAnimationFrame(animationId);
-        };
-    }, [autoScroll]);
 
     //Desktop
     const handleWheel = (e) => {
         if (!sliderRef.current) return;
-
-        e.preventDefault();
         e.stopPropagation();
-        
         sliderRef.current.scrollLeft += e.deltaY;
-        setAutoScroll(false)
-
-        clearTimeout(window.scrollTimeout);
-        window.scrollTimeout = setTimeout(() => setAutoScroll(true), 2000)
     }
-
-    //Mobile
-    const handleTouchStart = () => {
-        setAutoScroll(false);
-    };
-
-    const handleTouchEnd = () => {
-        setTimeout(() => setAutoScroll(true), 3000);
-    };
 
     return (
         <>
         <div
-        className="slider-container"
-        ref={sliderRef}
-        onWheel={handleWheel}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        style={{ cursor: 'grab' }}
+            className="slider-container"
+            ref={sliderRef}
+            onWheel={handleWheel}
+            style={{ cursor: 'grab' }}
         >
             <div className="slider-track">
                 {duplicate.map((skill, index) => {
@@ -193,6 +159,7 @@ function Slider() {
                     name={skill.name}
                     img={skill.img}
                     text={skill.text}
+                    stage={skill.stage}
                     />
                 })}
             </div> 
@@ -201,13 +168,88 @@ function Slider() {
     )
 }
 
-function Card({ name, img, text }) {
+function Card({ name, img, text, stage }) {
+    const dataStage = {
+        styleStageBasic: '#4CAF50',
+        styleStageMiddle: '#ffd000ff', 
+        styleStagePro: '#F44336',
+
+    };
+    const renderStage = () => {
+        if (stage == 'Basic') {
+            return (
+                <div className="stage">
+                    <div
+                    className='stageBlock'
+                    style={{ backgroundColor: `${dataStage.styleStageBasic}` }}
+                    ></div>
+                    <div
+                    className='stageBlock'
+                    ></div>
+                    <div
+                    className='stageBlock'
+                    ></div>
+                </div>
+            );
+        } else if (stage == 'Middle') {
+            return (
+                <div className="stage">
+                    <div
+                    className='stageBlock'
+                    style={{ backgroundColor: `${dataStage.styleStageMiddle}` }}
+                    ></div>
+                    <div
+                    className='stageBlock'
+                    style={{ backgroundColor: `${dataStage.styleStageMiddle}` }}
+                    ></div>
+                    <div
+                    className='stageBlock'
+                    ></div>
+                </div>
+            );
+        } else if (stage == 'Pro') {
+            return (
+                <div className="stage">
+                    <div
+                    className='stageBlock'
+                    style={{ backgroundColor: `${dataStage.styleStagePro}` }}
+                    ></div>
+                    <div
+                    className='stageBlock'
+                    style={{ backgroundColor: `${dataStage.styleStagePro}` }}
+                    ></div>
+                    <div
+                    className='stageBlock'
+                    style={{ backgroundColor: `${dataStage.styleStagePro}` }}
+                    ></div>
+                </div>
+            );
+        } else {
+            return (
+                <div className="stage">
+                    <div
+                    className='stageBlock'
+                    ></div>
+                    <div
+                    className='stageBlock'
+                    ></div>
+                    <div
+                    className='stageBlock'
+                    ></div>
+                </div>
+            );
+        }
+}
     return (
         <>
             <div className='card'>
                 <h3>{name}</h3>
                 <img src={img} alt={name} />
                 <p>{text}</p>
+                <div className='stageOfSkill'>
+                    <p>{stage}</p>
+                    {renderStage()}
+                </div>
             </div>
         </>
     )
