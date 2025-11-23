@@ -350,7 +350,7 @@
 @media (max-width: 500px) {
     .skills {
         padding: 60px 20px;
-        height: 60vh;
+        height: 80vh;
     }
 
     .findStage {
@@ -358,7 +358,7 @@
     }
     
     .slider-container {
-        height: 40vh;
+        height: 50vh;
         padding: 10px;
     }
     
