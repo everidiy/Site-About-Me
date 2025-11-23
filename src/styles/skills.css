@@ -358,9 +358,8 @@
     }
     
     .slider-container {
-        height: 35vh;
+        height: 40vh;
         padding: 10px;
-        border: 2px solid red;
     }
     
     .card {
