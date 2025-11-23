@@ -124,7 +124,7 @@ export default function Skills() {
                 fontSize: '20px', 
                 color: 'var(--text-secondary)',
                 fontWeight: 'bold',
-                marginTop: '20px'
+                marginTop: '10px'
             }}>
                You can scroll this! 
         </div>
@@ -245,7 +245,7 @@ function Card({ name, img, text, stage }) {
             <div className='card'>
                 <h3>{name}</h3>
                 <img src={img} alt={name} />
-                <p>{text}</p>
+                <p className='textBlock'>{text}</p>
                 <div className='stageOfSkill'>
                     <p>{stage}</p>
                     {renderStage()}
