@@ -95,7 +95,7 @@ function Card({ name, img, demo, code, techologies}) {
                 </div>
                 <div className='technologies'>
                     <div className="custom-details" onClick={() => setIsOpen(!isOpen)}>
-                        <summary>Technologies</summary>
+                        <summary>Stack</summary>
                         <i><p className={isOpen ? 'open' : ''}>{techologies}</p></i>
                     </div>
                 </div>

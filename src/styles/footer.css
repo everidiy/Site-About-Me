@@ -43,13 +43,6 @@
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-.number h2, .email h2 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-    position: relative;
-}
-
 @media (min-width: 1600px) {
     .footer {
         padding: 40px 100px;
@@ -59,13 +52,14 @@
         width: 100px;
         height: 100px;
     }
-    
-    .number h2, .email h2 {
-        font-size: 1.4rem;
+
+    .nodes {
+        flex-direction: column;
     }
+    
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1000px) {
     .footer {
         padding: 50px 150px;
     }
@@ -74,13 +68,14 @@
         width: 120px;
         height: 120px;
     }
-    
-    .number h2, .email h2 {
-        font-size: 1.6rem;
+
+    .nodes {
+        flex-direction: column;
     }
+    
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .footer {
         height: auto;
         padding: 25px 15px;
@@ -92,17 +87,32 @@
         text-align: center;
     }
     
-    .number h2 {
-        font-size: 0.5rem;
-    }
-
-    .email h2 {
-        font-size: 0.5rem;
-    }
-    
     .logo-footer img {
         width: 60px;
         height: 60px;
+    }
+    
+    .node {
+        padding: 10px;
+    }
+}
+
+
+@media (min-width: 360px) {
+    .footer {
+        height: auto;
+        padding: 25px 15px;
+    }
+    
+    .nodes {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .logo-footer img {
+        width: 100px;
+        height: 100px;
     }
     
     .node {

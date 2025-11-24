@@ -12,14 +12,9 @@ export default function Footer() {
     return (
         <div className="footer">
             <div className="nodes">
+                <h2>More information at</h2>
                 <div className="node logo-footer" onClick={() => window.open('https://github.com/everidiy', '_blank')}>
                     <img src="/logo.jpg" alt="Богдан Давыдов" />
-                </div>
-                <div className="node number" onClick={handlePhoneClick}>
-                    <h2>+7 953 073 29 68</h2>
-                </div>
-                <div className="node email" onClick={handleEmailClick}>
-                    <h2>davydovbogdan599@gmail.com</h2>
                 </div>
             </div>
         </div>
