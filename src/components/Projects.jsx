@@ -56,6 +56,7 @@ export default function Projects() {
     return (
         <section id="projects">
         <div className='projects'>
+            <div className="projects-background"></div>
             <h1 className='title-project'>Projects</h1>
             <Container />
         </div>

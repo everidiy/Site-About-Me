@@ -112,6 +112,7 @@ const dataSkills = [
 const duplicate = [...dataSkills]
 
 export default function Skills() {
+    const [isMobile, setIsMobile] = useState(false)
     const [selectedStage, setSelectedStage] = useState('All');
 
     const handleSelectedChange = (e) => {
@@ -139,16 +140,15 @@ export default function Skills() {
                 <option value="Pro">Pro</option>
                 <option value="Untouched">Untouched</option>
             </select>
-            <Slider filteredSkills={filteredSkills} />
+            <Slider filteredSkills={filteredSkills} isMobile={isMobile} setIsMobile={setIsMobile}/>
             <div style={{ 
                 textAlign: 'center', 
                 marginTop: '10px', 
                 fontSize: '20px', 
                 color: 'var(--text-secondary)',
                 fontWeight: 'bold',
-                marginTop: '10px'
             }}>
-               You can scroll this! 
+                {isMobile ? ('You can scroll this!') : ('')}
         </div>
         </div>
         </section>
@@ -156,36 +156,68 @@ export default function Skills() {
     )
 }
 
-function Slider({ filteredSkills }) {
+function Slider({ filteredSkills, isMobile, setIsMobile }) {
     const sliderRef = useRef(null);
+
+     useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+        };
+    }, []); 
 
     //Desktop
     const handleWheel = (e) => {
         if (!sliderRef.current) return;
-        e.stopPropagation();
+        e.preventDefault();
         sliderRef.current.scrollLeft += e.deltaY;
     }
 
     return (
         <>
-        <div
-            className="slider-container"
-            ref={sliderRef}
-            onWheel={handleWheel}
-            style={{ cursor: 'grab' }}
-        >
-            <div className="slider-track">
-                {filteredSkills.map((skill, index) => {
-                    return <Card
-                    key={`${skill.id}-${index}`}
-                    name={skill.name}
-                    img={skill.img}
-                    text={skill.text}
-                    stage={skill.stage}
-                    />
-                })}
-            </div> 
-        </div>
+        {isMobile ? (
+             <div
+                className="slider-container"
+                ref={sliderRef}
+                onWheel={handleWheel}
+                style={{ 
+                    cursor: 'grab',
+                    overflowX: 'auto',
+                }}
+            >
+                <div className="slider-track">
+                    {filteredSkills.map((skill, index) => {
+                        return <Card
+                        key={`${skill.id}-${index}`}
+                        name={skill.name}
+                        img={skill.img}
+                        text={skill.text}
+                        stage={skill.stage}
+                        />
+                    })}
+                </div> 
+            </div>
+        ) : (
+            <div className="flex-container">
+                <div className="flex-track">
+                    {filteredSkills.map((skill) => {
+                        return <Card
+                        key={`${skill.id}`}
+                        name={skill.name}
+                        img={skill.img}
+                        text={skill.text}
+                        stage={skill.stage}
+                        />
+                    })}
+                </div> 
+            </div>
+        )}
         </>
     )
 }
@@ -196,69 +228,59 @@ function Card({ name, img, text, stage }) {
         styleStageMiddle: 'linear-gradient(135deg, #FFB300, #FFCA28)',
         styleStagePro: 'linear-gradient(135deg, #E53935, #EF5350)',
     };
+
     const renderStage = () => {
-        if (stage == 'Basic') {
-            return (
-                <div className="stage">
-                    <div
-                    className='stageBlock'
-                    style={{ background: `${dataStage.styleStageBasic}` }}
-                    ></div>
-                    <div
-                    className='stageBlock'
-                    ></div>
-                    <div
-                    className='stageBlock'
-                    ></div>
-                </div>
-            );
-        } else if (stage == 'Middle') {
-            return (
-                <div className="stage">
-                    <div
-                    className='stageBlock'
-                    style={{ background: `${dataStage.styleStageMiddle}` }}
-                    ></div>
-                    <div
-                    className='stageBlock'
-                    style={{ background: `${dataStage.styleStageMiddle}` }}
-                    ></div>
-                    <div
-                    className='stageBlock'
-                    ></div>
-                </div>
-            );
-        } else if (stage == 'Pro') {
-            return (
-                <div className="stage">
-                    <div
-                    className='stageBlock'
-                    style={{ background: `${dataStage.styleStagePro}` }}
-                    ></div>
-                    <div
-                    className='stageBlock'
-                    style={{ background: `${dataStage.styleStagePro}` }}
-                    ></div>
-                    <div
-                    className='stageBlock'
-                    style={{ background: `${dataStage.styleStagePro}` }}
-                    ></div>
-                </div>
-            );
-        } else {
-            return (
-                <div className="stage">
-                    <div
-                    className='stageBlock'
-                    ></div>
-                    <div
-                    className='stageBlock'
-                    ></div>
-                    <div
-                    className='stageBlock'
-                    ></div>
-                </div>
-            );
+        switch(stage) {
+            case 'Basic':
+                return (
+                    <div className="stage">
+                        <div
+                            className='stageBlock'
+                            style={{ background: dataStage.styleStageBasic }}
+                        />
+                        <div className='stageBlock'/>
+                        <div className='stageBlock'/>
+                    </div>
+                );
+            case 'Middle':
+                return (
+                    <div className="stage">
+                        <div
+                            className='stageBlock'
+                            style={{ background: dataStage.styleStageMiddle }}
+                        />
+                        <div
+                            className='stageBlock'
+                            style={{ background: dataStage.styleStageMiddle }}
+                        />
+                        <div className='stageBlock'/>
+                    </div>
+                );
+            case 'Pro':
+                return (
+                    <div className="stage">
+                        <div
+                            className='stageBlock'
+                            style={{ background: dataStage.styleStagePro }}
+                        />
+                        <div
+                            className='stageBlock'
+                            style={{ background: dataStage.styleStagePro }}
+                        />
+                        <div
+                            className='stageBlock'
+                            style={{ background: dataStage.styleStagePro }}
+                        />
+                    </div>
+                );
+            default:
+                return (
+                    <div className="stage">
+                        <div className='stageBlock'/>
+                        <div className='stageBlock'/>
+                        <div className='stageBlock'/>
+                    </div>
+                );
         }
 }
     return (

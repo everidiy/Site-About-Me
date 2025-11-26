@@ -1,6 +1,11 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 .connection {
     padding: 80px 100px;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     color: var(--text-primary);
     text-align: center;
     min-height: 30vh;
@@ -58,12 +63,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     background: var(--card-bg);
-    box-shadow: 0 10px 30px var(--shadow-color);
+    box-shadow: 0 0px 25px var(--shadow-color);
 }
 
 .contact-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px var(--shadow-color);
+    box-shadow: 0 0px 30px var(--shadow-color);
 }
 
 .contact-card-header {

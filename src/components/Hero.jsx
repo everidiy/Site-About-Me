@@ -9,9 +9,28 @@ export default function Hero() {
     };
 
     return (
-        <div className="hero">
-            <Text scrollToSection={scrollToSection} />
-            <Img />
+        <section id='main'>
+            <div className="hero">
+                <div className="hero-wrapper">
+                    <div className="hero-content">
+                        <Particles />
+                        <Text scrollToSection={scrollToSection} />
+                        <Img />
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+function Particles() {
+    return (
+        <div className="hero-particles">
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
         </div>
     )
 }

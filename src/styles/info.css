@@ -1,9 +1,15 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .info {
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
     padding: 60px 100px;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 2;
 }
 
 .text {
