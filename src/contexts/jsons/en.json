@@ -1,0 +1,164 @@
+{
+    "header": {
+        "main": "Main",
+        "about": "About",
+        "skills": "Skills", 
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Hi, I'm Bogdan <br />- beginner <br />Frontend developer!",
+        "btn": "Learn more"
+    },
+    "about": {
+    "title": "A little about me",
+
+    "introduction": "My name is <strong>Bogdan</strong>, I'm 17 years old, and what began as a childhood dream has now evolved into a clear, purposeful goal: to become a frontend developer capable of continuous learning and endless growth!",
+    
+    "journeyStart": "My journey started in 2022 when I discovered a free web development course from <strong>Gosuslugi</strong>. After completing it, I knew immediately - this was my calling, something I could passionately pursue forever. That moment marked the beginning of my frontend adventure.",
+    
+    "challenges": "There have been numerous highs and lows, countless projects ranging from awkward to amazing. I've encountered many technologies, and with each new one, I initially wondered: \"How will I ever learn this?\" But as they say, <em>fear has big eyes.</em>",
+    
+    "determination": "Despite doubts, I keep pushing forward toward my goal - sometimes slowly, sometimes quickly, but always moving ahead!"
+    },
+    "skills": {
+        "title": "Skills",
+        "levels": {
+            "all": "All",
+            "basic": "Basic", 
+            "middle": "Middle",
+            "pro": "Pro",
+            "untouched": "Untouched"
+        },
+        "items": {
+            "html5": {
+                "name": "HTML5",
+                "quote": "90s websites vibe",
+                "level": "middle"
+            },
+            "css3": {
+                "name": "CSS3",
+                "quote": "Designer's dream", 
+                "level": "middle"
+            },
+            "javascript": {
+                "name": "JavaScript",
+                "quote": "Makes you think... a lot",
+                "level": "middle"
+            },
+            "react": {
+                "name": "React",
+                "quote": "Not as scary as I thought",
+                "level": "basic"
+            },
+            "api": {
+                "name": "API",
+                "quote": "Extra brain wrinkles",
+                "level": "basic"
+            },
+            "go": {
+                "name": "Go",
+                "quote": "Thanks, Yandex!",
+                "level": "basic"
+            },
+            "vercel": {
+                "name": "Vercel",
+                "quote": "Deployment made easy",
+                "level": "basic"
+            },
+            "github": {
+                "name": "GitHub",
+                "quote": "Code platform site",
+                "level": "middle"
+            },
+            "typescript": {
+                "name": "TypeScript",
+                "quote": "JS with superpowers",
+                "level": "basic"
+            },
+            "zustand": {
+                "name": "Zustand",
+                "quote": "Just API for React",
+                "level": "untouched"
+            },
+            "vite": {
+                "name": "Vite",
+                "quote": "Cool & fast build tool", 
+                "level": "basic"
+            },
+            "react_query": {
+                "name": "React Query",
+                "quote": "Server manager",
+                "level": "untouched"
+            },
+            "react_router": {
+                "name": "React Router",
+                "quote": "Super navigation",
+                "level": "untouched"
+            },
+            "npm": {
+                "name": "Npm",
+                "quote": "Package manager",
+                "level": "basic"
+            },
+            "git": {
+                "name": "Git",
+                "quote": "Version system",
+                "level": "basic"
+            },
+            "json": {
+                "name": "JSON",
+                "quote": "Comma drama",
+                "level": "basic"
+            }
+        },
+        "clue": "You can scroll this!"
+    },
+    "projects": {
+        "title": "Projects",
+        "items": {
+            "demo": "Demo", 
+            "code": "Code",
+            "stack": "Stack",
+            "todo": {
+            "name": "To-Do App"
+            },
+            "weather": {
+            "name": "Weather App"
+            },
+            "tictactoe": {
+            "name": "Tic-Tac-Toe"
+            },
+            "cardgame": {
+            "name": "Card Game"
+            },
+            "shoplist": {
+            "name": "Shop List"
+            },
+            "biosite": {
+            "name": "Bio-Site"
+            }
+        }
+    },
+    "connection": {
+        "title": "I'm always available for communication!",
+        "socials": {
+            "goto": "Go to",
+            "tg": {
+                "name": "Telegram",
+                "text": "Write a message"
+            }, 
+            "github": {
+                "name": "GitHub",
+                "text": "View my projects"
+            },
+            "vk": {
+                "name": "VK",
+                "text": "Write a message"
+            }
+        }
+    },
+    "footer": {
+        "text": "More information at GitHub"
+    }
+}

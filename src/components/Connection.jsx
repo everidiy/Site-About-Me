@@ -1,12 +1,16 @@
 import '../styles/connection.css';
 import { useState } from 'react';
+import { useLang } from '../contexts/LangContext';
 
-const dataContacts = [
+export default function Connection() {
+    const { t } = useLang()
+
+    const dataContacts = [
     {
         id: 1,
         name: 'Telegram',
         img: "/telegram.png",
-        text: 'Write a message',
+        text: t('connection.socials.tg.text'),
         link: 'https://t.me/everidiy',
         color: '#24bde4ff'
     },
@@ -14,7 +18,7 @@ const dataContacts = [
         id: 2,
         name: 'GitHub',
         img: "/githubsecond.png",
-        text: 'View my projects',
+        text: t('connection.socials.github.text'),
         link: 'https://github.com/everidiy',
         color: '#000000ff'
     },
@@ -22,13 +26,12 @@ const dataContacts = [
         id: 3,
         name: 'VK',
         img: "/vk.png",
-        text: 'Write a message',
+        text: t('connection.socials.vk.text'),
         link: 'https://vk.com/bogeeffff',
         color: '#01679eff'
     }
-];
+    ];
 
-export default function Connection() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextContact = () => {
@@ -44,7 +47,7 @@ export default function Connection() {
     return (
         <section id='contact'>
             <div className="connection">
-                <h3 className="title-contact">I'm always available for communication!</h3>
+                <h3 className="title-contact">{t('connection.title')}</h3>
                 <div className="container-contacts">
                     <button className="contact-arrow left-arrow" onClick={prevContact}>
                         <p>‹</p>
@@ -64,7 +67,7 @@ export default function Connection() {
                                 className="contact-link-btn" 
                                 style={{ backgroundColor: currentContact.color }}
                             >
-                                Go to →
+                                {t('connection.socials.goto')}
                             </button>
                         </div>
                     </div>

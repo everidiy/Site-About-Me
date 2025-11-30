@@ -1,0 +1,164 @@
+{
+    "header": {
+        "main": "Главная",
+        "about": "Обо мне",
+        "skills": "Навыки", 
+        "projects": "Проекты",
+        "contact": "Контакты"
+    },
+    "hero": {
+        "title": "Привет, я Богдан <br />- начинающий <br />Frontend разработчик!",
+        "btn": "Узнать больше"
+    },
+    "about": {
+        "title": "Немного обо мне",
+
+        "introduction": "Меня зовут <strong>Богдан</strong>, мне <strong>17 лет</strong>, и то, что начиналось как детская мечта, превратилось в <strong>чёткую, осмысленную цель</strong>: стать <strong>frontend разработчиком</strong>, способным к <strong>непрерывному обучению и бесконечному росту</strong>!",
+        
+        "journeyStart": "Мой путь начался в <strong>2022</strong> году, когда я обнаружил бесплатный курс по веб-разработке от <strong>Госуслуг</strong>. Пройдя его, я сразу понял - <strong>это моё призвание</strong>, то, чем я могу страстно заниматься всю жизнь. Этот момент положил начало моему <strong>приключению во frontend</strong>.",
+        
+        "challenges": "Было множество <strong>взлётов и падений</strong>, бесчисленные проекты - от неуклюжих до удивительных. Я столкнулся со многими технологиями, и с каждой новой я сначала думал: <strong>«Как я вообще это выучу?!»</strong>. Но, как говорится, <u><em>у страха глаза велики</em></u>.",
+        
+        "determination": "<strong>Несмотря на сомнения, я продолжаю двигаться к своей цели</strong> - иногда медленно, иногда быстро, но <strong>всегда вперёд</strong>!"
+    },
+    "skills": {
+        "title": "Навыки",
+        "levels": {
+            "all": "Все",
+            "basic": "Базовый", 
+            "middle": "Средний",
+            "pro": "Профи",
+            "untouched": "Не изучал"
+        },
+        "items": {
+            "html5": {
+                "name": "HTML5",
+                "quote": "Вайб сайтов из 90-х",
+                "level": "middle"
+            },
+            "css3": {
+                "name": "CSS3", 
+                "quote": "Мечта дизайнера",
+                "level": "middle"
+            },
+            "javascript": {
+                "name": "JavaScript",
+                "quote": "Заставляет думать... много",
+                "level": "middle"
+            },
+            "react": {
+                "name": "React",
+                "quote": "Не так страшен, как казалось",
+                "level": "basic"
+            },
+            "api": {
+                "name": "API",
+                "quote": "Лишние извилины",
+                "level": "basic"
+            },
+            "go": {
+                "name": "Go",
+                "quote": "Спасибо, Яндекс!",
+                "level": "basic"
+            },
+            "vercel": {
+                "name": "Vercel",
+                "quote": "Деплой без боли",
+                "level": "basic"
+            },
+            "github": {
+                "name": "GitHub",
+                "quote": "Площадка для кода",
+                "level": "middle"
+            },
+            "typescript": {
+                "name": "TypeScript",
+                "quote": "JS с суперсилами",
+                "level": "basic"
+            },
+            "zustand": {
+                "name": "Zustand",
+                "quote": "Просто API для React",
+                "level": "untouched"
+            },
+            "vite": {
+                "name": "Vite", 
+                "quote": "Крутой и быстрый сборщик",
+                "level": "basic"
+            },
+            "react_query": {
+                "name": "React Query",
+                "quote": "Менеджер сервера",
+                "level": "untouched"
+            },
+            "react_router": {
+                "name": "React Router",
+                "quote": "Супер-навигация",
+                "level": "untouched"
+            },
+            "npm": {
+                "name": "Npm",
+                "quote": "Менеджер пакетов",
+                "level": "basic"
+            },
+            "git": {
+                "name": "Git",
+                "quote": "Система версий",
+                "level": "basic"
+            },
+            "json": {
+                "name": "JSON",
+                "quote": "Всё портит запятая",
+                "level": "basic"
+            }
+        },
+        "clue": "Это можно скроллить"
+    },
+    "projects": {
+        "title": "Проекты",
+        "items": {
+            "demo": "Демо", 
+            "code": "Код",
+            "stack": "Стек",
+            "todo": {
+            "name": "To-Do приложение"
+            },
+            "weather": {
+            "name": "Погодное приложение"
+            },
+            "tictactoe": {
+            "name": "Крестики-нолики"
+            },
+            "cardgame": {
+            "name": "Карточная игра"
+            },
+            "shoplist": {
+            "name": "Список покупок"
+            },
+            "biosite": {
+            "name": "Био-сайт"
+            }
+        }
+    },
+    "connection": {
+        "title": "Я всегда доступен для общения!",
+        "socials": {
+            "goto": "Перейти",
+            "tg": {
+                "name": "Telegram",
+                "text": "Написать сообщение"
+            }, 
+            "github": {
+                "name": "GitHub",
+                "text": "Посмотреть проекты"
+            },
+            "vk": {
+                "name": "VK",
+                "text": "Написать сообщение"
+            }
+        }
+    },
+    "footer": {
+        "text": "Больше информации на GitHub"
+    }
+}

@@ -1,3 +1,4 @@
+import { useLang } from '../contexts/LangContext';
 import '../styles/hero.css';
 
 export default function Hero() {
@@ -13,7 +14,6 @@ export default function Hero() {
             <div className="hero">
                 <div className="hero-wrapper">
                     <div className="hero-content">
-                        <Particles />
                         <Text scrollToSection={scrollToSection} />
                         <Img />
                     </div>
@@ -23,23 +23,14 @@ export default function Hero() {
     )
 }
 
-function Particles() {
-    return (
-        <div className="hero-particles">
-            <div className="particle"></div>
-            <div className="particle"></div>
-            <div className="particle"></div>
-            <div className="particle"></div>
-            <div className="particle"></div>
-        </div>
-    )
-}
-
 function Text({ scrollToSection }) {
+    const { t } = useLang()
     return (
         <div className="hi">
-            <p>Hi, I'm Bogdan <br />- beginner Frontend developer!</p>
-            <button onClick={() => scrollToSection('learn')}>Learn more</button>
+            <span
+                dangerouslySetInnerHTML={{ __html: t('hero.title') }}
+            />
+            <button onClick={() => scrollToSection('learn')}>{t("hero.btn")}</button>
         </div>
     )
 }

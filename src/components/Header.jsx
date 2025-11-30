@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useLang } from '../contexts/LangContext';
 import '../styles/header.css';
 
 export default function Header() {
+    const { lang, toggleLang, t } = useLang()
     const [isNavVisible, setIsNavVisible] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
@@ -88,19 +90,36 @@ export default function Header() {
                 
                 <div className="nav-links">
                     <div className={`links ${isNavVisible ? 'visible' : 'hidden'}`}>
-                        <div className="link" onClick={() => scrollToSection('main')}>Main</div>
-                        <div className="link" onClick={() => scrollToSection('about')}>About</div>
-                        <div className="link" onClick={() => scrollToSection('skills')}>Skills</div>
-                        <div className="link" onClick={() => scrollToSection('projects')}>Projects</div>
-                        <div className="link" onClick={() => scrollToSection('contact')}>Contact</div>
+                        <div className="link" onClick={() => scrollToSection('main')}>
+                            {t('header.main')}
+                        </div>
+                        <div className="link" onClick={() => scrollToSection('about')}>
+                            {t('header.about')}
+                        </div>
+                        <div className="link" onClick={() => scrollToSection('skills')}>
+                            {t('header.skills')}
+                        </div>
+                        <div className="link" onClick={() => scrollToSection('projects')}>
+                            {t('header.projects')}
+                        </div>
+                        <div className="link" onClick={() => scrollToSection('contact')}>
+                            {t('header.contact')}
+                        </div>
                         
                         <button
                         className='theme-toggle'
                         onClick={toggleTheme}
                         aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
                         >
-                            {darkMode ? 'light' : "dark"}
+                            {darkMode ? '☀️' : "🌙"}
                         </button>
+
+                        <button 
+                        className='lang-toggle'
+                        onClick={toggleLang}>
+                            {lang === 'ru' ? '\u{1F1FA}\u{1F1F8}' : '\u{1F1F7}\u{1F1FA}' }
+                        </button>
+
 
                         {}
                         {!isMobile && (

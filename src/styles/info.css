@@ -35,10 +35,20 @@
     line-height: 25px;
     text-align: center;
     color: var(--text-secondary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.prehistory p {
+    margin-bottom: 1.5em;
+}
+
+.prehistory p:last-child {
+    margin-bottom: 0;
 }
 
 .prehistory strong, .prehistory em {
-    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
 }
 
 @media (min-width: 2000px) {
@@ -56,9 +66,12 @@
     }
     
     .prehistory {
-        font-size: 22px;
         word-spacing: 7px;
         letter-spacing: 1.5px;
+    }
+
+    .prehistory p, .prehistory strong, .prehistory em {
+        font-size: 24px;
     }
 }
 
@@ -77,9 +90,23 @@
     }
     
     .prehistory {
-        font-size: 20px;
         word-spacing: 6px;
         letter-spacing: 1.2px;
+    }
+
+    .prehistory p, .prehistory strong, .prehistory em {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1599px) {
+    .prehistory {
+        word-spacing: 3px;
+        letter-spacing: 1px;
+    }
+
+    .prehistory p, .prehistory strong, .prehistory em {
+        font-size: 20px;
     }
 }
 
@@ -91,6 +118,15 @@
     .text {
         width: 100%;
         max-width: 600px;
+    }
+
+    .prehistory {
+        word-spacing: 4px;
+        letter-spacing: 0.8px;
+    }
+
+    .prehistory p, .prehistory strong, .prehistory em {
+        font-size: 16px;
     }
 }
 
@@ -105,8 +141,11 @@
     }
     
     .prehistory {
-        font-size: 16px;
         word-spacing: 3px;
         letter-spacing: 0.5px;
+    }
+
+    .prehistory p, .prehistory strong, .prehistory em {
+        font-size: 16px;
     }
 }
