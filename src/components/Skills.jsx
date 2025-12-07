@@ -32,7 +32,7 @@ export default function Skills() {
         name: t('skills.items.react.name'),
         img: "/react.png",
         text: t('skills.items.react.quote'),
-        stage: t('skills.levels.basic')
+        stage: t('skills.levels.middle')
     },
     {
         id: 5, 
@@ -71,10 +71,10 @@ export default function Skills() {
     },
     {
         id: 10,
-        name: t('skills.items.zustand.name'),
-        img: "/zustand.svg",
-        text: t('skills.items.zustand.quote'),
-        stage: t('skills.levels.untouched')
+        name: t('skills.items.cs.name'),
+        img: "/cs.webp",
+        text: t('skills.items.cs.quote'),
+        stage: t('skills.levels.basic')
     },
     {
         id: 11,
@@ -85,17 +85,17 @@ export default function Skills() {
     },
     {
         id: 12,
-        name: t('skills.items.react_query.name'),
-        img: "/react-query.svg",
-        text: t('skills.items.react_query.quote'),
-        stage: t('skills.levels.untouched')
+        name: t('skills.items.sql.name'),
+        img: "/sql.png",
+        text: t('skills.items.sql.quote'),
+        stage: t('skills.levels.basic')
     },
     {
         id: 13,
         name: t('skills.items.react_router.name'),
         img: "/react-router.webp",
         text: t('skills.items.react_router.quote'),
-        stage: t('skills.levels.untouched')
+        stage: t('skills.levels.basic')
     },
     {
         id: 14,
@@ -154,7 +154,6 @@ export default function Skills() {
                 <option value="Basic">{t("skills.levels.basic")}</option>
                 <option value="Middle">{t("skills.levels.middle")}</option>
                 <option value="Pro">{t("skills.levels.pro")}</option>
-                <option value="Untouched">{t("skills.levels.untouched")}</option>
             </select>
             <Slider filteredSkills={filteredSkills} isMobile={isMobile} setIsMobile={setIsMobile}/>
             <div style={{ 

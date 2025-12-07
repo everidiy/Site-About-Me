@@ -49,7 +49,7 @@
             "react": {
                 "name": "React",
                 "quote": "Not as scary as I thought",
-                "level": "basic"
+                "level": "middle"
             },
             "api": {
                 "name": "API",
@@ -76,25 +76,25 @@
                 "quote": "JS with superpowers",
                 "level": "basic"
             },
-            "zustand": {
-                "name": "Zustand",
-                "quote": "Just API for React",
-                "level": "untouched"
+            "cs": {
+                "name": "C#",
+                "quote": "Console apps reopened",
+                "level": "basic"
             },
             "vite": {
                 "name": "Vite",
                 "quote": "Cool & fast build tool", 
                 "level": "basic"
             },
-            "react_query": {
-                "name": "React Query",
-                "quote": "Server manager",
-                "level": "untouched"
+            "sql": {
+                "name": "MySQL",
+                "quote": "Super databases",
+                "level": "basic"
             },
             "react_router": {
                 "name": "React Router",
                 "quote": "Super navigation",
-                "level": "untouched"
+                "level": "basic"
             },
             "npm": {
                 "name": "Npm",
@@ -126,8 +126,8 @@
             "weather": {
             "name": "Weather App"
             },
-            "tictactoe": {
-            "name": "Tic-Tac-Toe"
+            "library": {
+            "name": "Personal Library"
             },
             "cardgame": {
             "name": "Card Game"

@@ -27,8 +27,7 @@
             "all": "Все",
             "basic": "Базовый", 
             "middle": "Средний",
-            "pro": "Профи",
-            "untouched": "Не изучал"
+            "pro": "Профи"
         },
         "items": {
             "html5": {
@@ -49,7 +48,7 @@
             "react": {
                 "name": "React",
                 "quote": "Не так страшен, как казалось",
-                "level": "basic"
+                "level": "middle"
             },
             "api": {
                 "name": "API",
@@ -76,25 +75,25 @@
                 "quote": "JS с суперсилами",
                 "level": "basic"
             },
-            "zustand": {
-                "name": "Zustand",
-                "quote": "Просто API для React",
-                "level": "untouched"
+            "cs": {
+                "name": "C#",
+                "quote": "Открытие консольных приложений",
+                "level": "basic"
             },
             "vite": {
                 "name": "Vite", 
                 "quote": "Крутой и быстрый сборщик",
                 "level": "basic"
             },
-            "react_query": {
-                "name": "React Query",
-                "quote": "Менеджер сервера",
-                "level": "untouched"
+            "sql": {
+                "name": "MySQL",
+                "quote": "Супер БДшки",
+                "level": "basic"
             },
             "react_router": {
                 "name": "React Router",
                 "quote": "Супер-навигация",
-                "level": "untouched"
+                "level": "basic"
             },
             "npm": {
                 "name": "Npm",
@@ -126,8 +125,8 @@
             "weather": {
             "name": "Погодное приложение"
             },
-            "tictactoe": {
-            "name": "Крестики-нолики"
+            "library": {
+            "name": "Персональная библиотека"
             },
             "cardgame": {
             "name": "Карточная игра"

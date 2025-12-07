@@ -37,10 +37,10 @@ function Container() {
     },
     {
         id: 3, 
-        name: t('projects.items.tictactoe.name'),
-        img: "/titac.png",
+        name: t('projects.items.library.name'),
+        img: "/library.png",
         demo: '$',
-        code: 'https://github.com/everidiy/Tic-Tac-Toe-React-App',
+        code: 'https://github.com/wtdear/PersonalLibrary_BooksGamesFilms',
         techologies: 'HTML, CSS, JavaScript, React'
     },
     {
