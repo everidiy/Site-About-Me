@@ -21,11 +21,11 @@ function Container() {
     const dataProjects = [
     {
         id: 1, 
-        name: t('projects.items.todo.name'),
-        img: "/todo.png",
-        demo: '*',
-        code: 'https://github.com/everidiy/To-Do-List-App-Only-React-TypeScript-',
-        techologies: 'HTML, CSS, JavaScript, React, Typescript'
+        name: t('projects.items.biosite.name'),
+        img: "/site.png",
+        demo: 'https://everidiy.vercel.app/',
+        code: 'https://github.com/everidiy/Site-About-Me',
+        techologies: 'HTML, CSS, JavaScript, React, React Router, JSON, API'
     },
     {
         id: 2, 
@@ -53,19 +53,19 @@ function Container() {
     },
     {
         id: 5, 
-        name: t('projects.items.shoplist.name'),
-        img: "/list.png",
-        demo: '%',
-        code: 'https://github.com/everidiy/ShoppingList-App',
-        techologies: 'HTML, CSS, JavaScript'
+        name: t('projects.items.consolegame.name'),
+        img: "/console.png",
+        demo: 'https://disk.yandex.ru/d/WsK8v-vyfZsD0w',
+        code: 'https://github.com/everidiy/Zinland-Island-Guess-A-Word',
+        techologies: 'C#'
     },
     {
         id: 6, 
-        name: t('projects.items.biosite.name'),
-        img: "/site.png",
-        demo: '%',
-        code: 'https://github.com/everidiy/repeating-Bio-Site-Zendaya',
-        techologies: 'HTML, CSS'
+        name: t('projects.items.todo.name'),
+        img: "/todo.png",
+        demo: 'https://your-daily-tasks.vercel.app/',
+        code: 'https://github.com/everidiy/Daily-Tasks-App',
+        techologies: 'HTML, CSS, JavaScript, React'
     },
     ]
 

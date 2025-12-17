@@ -132,11 +132,11 @@
             "cardgame": {
             "name": "Card Game"
             },
-            "shoplist": {
-            "name": "Shop List"
+            "consolegame": {
+            "name": "Console Guess Word"
             },
             "biosite": {
-            "name": "Bio-Site"
+            "name": "My WebSite"
             }
         }
     },
