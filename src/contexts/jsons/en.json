@@ -112,7 +112,9 @@
                 "level": "basic"
             }
         },
-        "clue": "You can scroll this!"
+        "clue": "You can scroll this!",
+        "hide": "Hide",
+        "showmore": "Show more"
     },
     "projects": {
         "title": "Projects",
@@ -137,8 +139,13 @@
             },
             "biosite": {
             "name": "My WebSite"
+            },
+            "zinland": {
+            "name": "Wiki-site"
             }
-        }
+        },
+        "hide": "Hide",
+        "showmore": "Show more"
     },
     "connection": {
         "title": "I'm always available for communication!",

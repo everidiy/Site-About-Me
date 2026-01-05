@@ -17,6 +17,7 @@ export default function Projects() {
 
 function Container() {
     const { t } = useLang()
+    const [hide, setHide] = useState(false)
 
     const dataProjects = [
     {
@@ -25,15 +26,15 @@ function Container() {
         img: "/site.png",
         demo: 'https://everidiy.vercel.app/',
         code: 'https://github.com/everidiy/Site-About-Me',
-        techologies: 'HTML, CSS, JavaScript, React, React Router, JSON, API'
+        techologies: 'React, JavaScript, CSS, React Router, JSON, API'
     },
     {
         id: 2, 
-        name: t('projects.items.weather.name'),
-        img: "/weather.png",
-        demo: 'https://weather-app-on-react-lovat.vercel.app/',
-        code: 'https://github.com/everidiy/Weather-App-On-React',
-        techologies: 'HTML, CSS, JavaScript, React, Typescript, API'
+        name: t('projects.items.zinland.name'),
+        img: "/wiki.png",
+        demo: 'https://zinland-wiki-site.vercel.app/',
+        code: 'https://github.com/everidiy/Zinland-Wiki-Site',
+        techologies: 'React, JavaScript, CSS, React Router, JSON'
     },
     {
         id: 3, 
@@ -41,18 +42,10 @@ function Container() {
         img: "/library.png",
         demo: '$',
         code: 'https://github.com/wtdear/PersonalLibrary_BooksGamesFilms',
-        techologies: 'HTML, CSS, JavaScript, React'
+        techologies: 'React, JavaScript, CSS, Python'
     },
     {
         id: 4, 
-        name: t('projects.items.cardgame.name'),
-        img: "/cards.png",
-        demo: '%',
-        code: 'https://github.com/everidiy/MemoryCardGame-App',
-        techologies: 'HTML, CSS, JavaScript'
-    },
-    {
-        id: 5, 
         name: t('projects.items.consolegame.name'),
         img: "/console.png",
         demo: 'https://disk.yandex.ru/d/WsK8v-vyfZsD0w',
@@ -60,29 +53,55 @@ function Container() {
         techologies: 'C#'
     },
     {
+        id: 5, 
+        name: t('projects.items.cardgame.name'),
+        img: "/cards.png",
+        demo: '%',
+        code: 'https://github.com/everidiy/MemoryCardGame-App',
+        techologies: 'HTML, CSS, JavaScript'
+    },
+    {
         id: 6, 
+        name: t('projects.items.weather.name'),
+        img: "/weather.png",
+        demo: 'https://weather-app-on-react-lovat.vercel.app/',
+        code: 'https://github.com/everidiy/Weather-App-On-React',
+        techologies: 'React, Typescript, CSS, API'
+    },
+    {
+        id: 7, 
         name: t('projects.items.todo.name'),
         img: "/todo.png",
         demo: 'https://your-daily-tasks.vercel.app/',
         code: 'https://github.com/everidiy/Daily-Tasks-App',
-        techologies: 'HTML, CSS, JavaScript, React'
+        techologies: 'React, JavaScript, CSS,'
     },
     ]
 
+    const visibleProjects = hide ? dataProjects : dataProjects.slice(0, 6);
+
     return (
         <>
-        <div className="container-projects">
-            {dataProjects.map(project => {
-                return <Card
-                key={project.id}
-                name={project.name}
-                img={project.img}
-                demo={project.demo}
-                code={project.code}
-                techologies={project.techologies}
-                />
-            })}
-        </div>
+            <div className="container-projects">
+                {visibleProjects.map(project => (
+                    <Card
+                        key={project.id}
+                        name={project.name}
+                        img={project.img}
+                        demo={project.demo}
+                        code={project.code}
+                        techologies={project.techologies}
+                    />
+                ))}
+            </div>
+
+            {dataProjects.length > 6 && (
+                <div className="projects-toggle">
+                    <button onClick={() => setHide(prev => !prev)}>
+                        {hide ? t('projects.hide') : t('projects.showmore')}
+                    </button>
+                </div>
+            )}
         </>
     )
 }

@@ -9,6 +9,18 @@
     margin-bottom: 10px;
 }
 
+.skillsHideBtn {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    box-shadow: 0px 0px 10px var(--shadow-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+}
+
 .findStage {
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -103,8 +115,8 @@
 }
 
 .card {
-    width: 300px;
-    height: 470px;
+    width: 250px;
+    height: 350px;
     border: 2px solid var(--accent-color);
     border-radius: 15px;
     padding: 20px 10px;
@@ -182,15 +194,16 @@
 @media (min-width: 2000px) {
     .skills {
         padding: 100px 200px;
-        min-height: 150vh;
+        min-height: 50vh;
     }
     
     .slider-container {
-        height: 650px;
+        height: 50px;
     }
 
     .flex-container {
-        min-height: 1800px;
+        min-height: 500px;
+        width: 75%;
     }
     
     .flex-track {
@@ -198,7 +211,7 @@
     }
     
     .card {
-        width: 300px;
+        width: 250px;
     }
     
     .card img {
@@ -225,6 +238,7 @@
 
     .flex-container {
         min-height: 550px;
+        width: 70%;
     }
     
     .flex-track {

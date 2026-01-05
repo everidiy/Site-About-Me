@@ -9,6 +9,27 @@
     z-index: 3;
 }
 
+.projects-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.projects-toggle button {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    box-shadow: 0px 0px 10px var(--shadow-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+}
+
 .projects {
     background: transparent;
     color: var(--text-primary);
